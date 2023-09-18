@@ -1043,10 +1043,6 @@ public final class ForgeEventHandler
             }
         }
 
-        if (entity.getType() == EntityType.SKELETON)
-        {
-            entity.setItemSlot(EquipmentSlot.MAINHAND, Helpers.getRandomElement(ForgeRegistries.ITEMS, TFCTags.Items.SKELETON_WEAPONS, entity.level.getRandom()).orElse(Items.BOW).getDefaultInstance());
-        }
         else if (entity.getType() == EntityType.SKELETON_HORSE && !TFCConfig.SERVER.enableVanillaSkeletonHorseSpawning.get())
         {
             event.setCanceled(true);
