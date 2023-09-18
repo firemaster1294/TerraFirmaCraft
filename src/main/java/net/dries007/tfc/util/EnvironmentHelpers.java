@@ -63,13 +63,6 @@ public final class EnvironmentHelpers
         final BlockPos groundPos = surfacePos.below();
         final float temperature = Climate.getTemperature(level, surfacePos);
 
-        profiler.push("tfcSnow");
-        doSnow(level, surfacePos, temperature);
-        profiler.popPush("tfcIce");
-        doIce(level, groundPos, temperature);
-        profiler.popPush("tfcIcicles");
-        doIcicles(level, surfacePos, temperature);
-        profiler.pop();
     }
 
     public static boolean isSnow(BlockState state)
